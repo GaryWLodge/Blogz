@@ -24,16 +24,16 @@ class Blog(db.Model):
 @app.route('/blog')
 def blog():
     
-    #one_blog = Blog.query.filter_by(id=id)
-    #title = request.args.get("title")
-    #body = request.args.get("body")
-    blogs = Blog.query.all()
-    
-    if request.args.get == 'blog?id={id}':
-        return render_template('one_blog.html', blogs=blogs)
-    else:
 
+    
+    if not request.args.get('id'):
+        blogs = Blog.query.all()
         return render_template('blog.html',blogs=blogs)
+
+    else:
+        id = request.args.get('id')
+        blogs = Blog.query.filter_by(id=id).all()
+        return render_template('one_blog.html',blogs=blogs)
 
 
 @app.route('/newpost', methods=['POST', 'GET'])
