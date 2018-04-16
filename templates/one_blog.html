@@ -1,8 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-
+<title>build-a-blog</title>
+<center>
+    <h1>
+        <a href="/blog">build-a-blog</a>
+    </h1>
+</center>
 
     {% for blog in blogs %}
       <h1>{{blog.title}}</h1>

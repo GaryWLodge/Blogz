@@ -41,10 +41,11 @@ def newpost():
     
     title_error = ''
     body_error = ''
-
+    id = request.args.get('id')
     if request.method == 'POST':
         title = request.form['title']
         body = request.form['body']
+       
         if title == '':
             title_error = 'Enter a Title'
             title = title
@@ -60,22 +61,17 @@ def newpost():
             new_blog = Blog(title,body)
             db.session.add(new_blog)
             db.session.commit()
-            return redirect('/blog')
+            id = request.args.get('id')
+            id = str(id)
+            
+            
+            return redirect('/blog?id='+ id)
         else:
             return render_template('newpost.html', title=title, body=body, title_error=title_error, body_error=body_error)    
     else:
         return render_template('newpost.html')    
 
 
-
-
-@app.route('/blog?id=')
-def one_blog():
-    title = request.args.get('title')
-    body = request.args.get('body')
-
-
-    return render_template('one_blog.html')
 
 
 
