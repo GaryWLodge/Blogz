@@ -61,9 +61,9 @@ def newpost():
             new_blog = Blog(title,body)
             db.session.add(new_blog)
             db.session.commit()
-            id = request.args.get('id')
-            id = str(id)
             
+            id = new_blog.id
+            id = str(id)
             
             return redirect('/blog?id='+ id)
         else:
