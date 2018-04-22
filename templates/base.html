@@ -2,10 +2,17 @@
 <html>
     <head>
         <nav>
-                <a href='/blog'>Main Blog Page</a>
+                <a href='/'>Home</a>         
+                <a href='/blog'>All Post</a>
                 <a href='/newpost'>Add New Blog Entry</a>
+                <div align="right"></div>
+                <a href='/logout'>Logout</a>
+                <a href='/login'>Login</a>
+                <a href='/signup'>Signup</a>
+                </div>
+               
         </nav>
-        <title>build-a-blog</title>
+        <title>BLOGZ!</title>
         <style type="text/css">
             .error {
                 color: red;
@@ -13,7 +20,11 @@
         </style>
     </head>
     <body>
-        
+        {% with messages = get_flashed_messages(with_categories=True) %}
+          {% for category,message in messages %}
+             <li class="{{category}}">{{message}}</li>
+          {% endfor %}
+       {% endwith %}
 
         {% block content %}
         {% endblock %}

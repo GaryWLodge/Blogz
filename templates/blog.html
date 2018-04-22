@@ -4,7 +4,7 @@
 <title>build-a-blog</title>
 <center>
     <h1>
-        <a href="/blog">build-a-blog</a>
+        <a href="/blog">BLOGZ!</a>
     </h1>
 </center>
 {% if blogs|length == 0: %}
@@ -15,8 +15,13 @@
            {% for blog in blogs %}
             <h1><a href="/blog?id={{blog.id}}">{{ blog.title }}</a></h1>
             {{ blog.body }}
+                {% for user in users %}
+                    {% if blog.owner_id == user.id : %}
+                        <i><h6>written by </i><a href="/blog?user={{user.username}}">{{ user.username }}</a></h6>
+                    {% endif %}  
+                {% endfor %}         
+                    
             <hr />
-            
            {% endfor %}
        
 {% endif %}

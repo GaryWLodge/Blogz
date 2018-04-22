@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<title>build-a-blog</title>
+<center>
+    <h1>
+        <a href="/blog">BLOGZ!</a>
+    </h1>
+</center>
+
+    {% for user in users %}
+      <ul><h1><li><a href="/blog?user={{user.username}}">{{ user.username }}</a></li></h1><ul>
+      
+      
+    {% endfor %}
+
+{% endblock %}    
