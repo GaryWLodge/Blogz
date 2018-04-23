@@ -1,0 +1,9 @@
+body {
+    background: linear-gradient(to left, rgb(3, 42, 216) , rgb(0, 183, 255));
+  }
+
+nav { 
+    font-size: 120%;
+    color: white;
+  
+}
