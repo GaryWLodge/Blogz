@@ -9,14 +9,18 @@
 </center>
 
     {% for blog in blogs %}
+       <div class="panel-body">
+        <div class="panel panel-default">
       <h1>{{blog.title}}</h1>
       {{blog.body}}
-      {% for user in users %}
+            {% for user in users %}
+      
                     {% if blog.owner_id == user.id : %}
                         <i><h6>written by </i><a href="/blog?user={{user.username}}">{{ user.username }}</a></h6>
-                    {% endif %}  
+        
+                        {% endif %}  
                 {% endfor %}         
-                    
+        </div>
             <hr />
     {% endfor %}
 

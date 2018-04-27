@@ -7,22 +7,27 @@
         <a href="/blog">BLOGZ!</a>
     </h1>
 </center>
+
 {% if blogs|length == 0: %}
     <p>No blogs yet</p>
     {% else %}
 
+    
        
            {% for blog in blogs %}
+           <div class="panel-body">
+            <div class="panel panel-default">
             <h1><a href="/blog?id={{blog.id}}">{{ blog.title }}</a></h1>
             {{ blog.body }}
+        </div>
                 {% for user in users %}
                     {% if blog.owner_id == user.id : %}
                         <i><h6>written by </i><a href="/blog?user={{user.username}}">{{ user.username }}</a></h6>
                     {% endif %}  
                 {% endfor %}         
-                    
+                 
             <hr />
            {% endfor %}
-       
+        
 {% endif %}
 {% endblock %}    

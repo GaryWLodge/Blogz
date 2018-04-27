@@ -2,17 +2,29 @@
 <html>
     <head>
             <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
-        <nav>
-                <a href='/'>Home</a>         
-                <a href='/blog'>All Post</a>
-                <a href='/newpost'>Add New Blog Entry</a>
-                <div align="right"></div>
-                <a href='/logout'>Logout</a>
-                <a href='/login'>Login</a>
-                <a href='/signup'>Signup</a>
-                </div>
-               
-        </nav>
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="/">BLOGZ!</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href='/blog'>All Post</a></li>
+                <li><a href='/newpost'>Add New Blog Entry</a>
+                <li><a href='/signup'>Signup</a></li>
+                <li><a href="signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a href='/logout'>logout</a></li>
+
+              </ul>
+            </div>
+          </nav>
         <title>BLOGZ!</title>
         <style type="text/css">
             .error {

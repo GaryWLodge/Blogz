@@ -186,8 +186,8 @@ def login():
 
 @app.before_request
 def require_login():
-    allowed_routes = ['login', 'signup', 'blog', 'index','static/styles/mainpage.css']
-    if request.endpoint not in allowed_routes and 'username' not in session:
+    allowed_routes = ['login', 'signup', 'blog', 'index']
+    if request.endpoint not in allowed_routes and 'username' not in session and 'static/styles/mainpage.css':
         return redirect('/login')
     
 
